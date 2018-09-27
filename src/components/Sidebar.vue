@@ -1,7 +1,9 @@
 <template>
   <div class="sidebar">
     <h2>INI SIDEBAR</h2>
-   <member v-for="member in members" :member="member"></member>
+    <!-- prevent untuk menghilangkan sifat behavior dari fungsi tersebut -->
+    <!-- native dipakai karenan mengambil dari component -->
+   <member v-for="member in members" :member="member" @click.native.prevent="showMember(member)"></member>
   </div>
 </template>
 
@@ -11,7 +13,7 @@ import Member from './Member'
 
 // sebelum dipake view nya harus diimport dulu
 // cara set dengan kata kunci key<nama>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   // masukan property untuk data
@@ -19,6 +21,12 @@ export default {
     // untuk mengambil data di state melalui getters
     ...mapGetters([
       'members'
+    ])
+  },
+  methods: {
+    ...mapActions([
+      // manggil fungsi showmember
+      'showMember'
     ])
   },
   components: {

@@ -12,7 +12,7 @@ export default{
             id: 2,
             name: 'David Beckham',
             goal: 8,
-            img: 'becks.jpg'
+            img: 'becks.png'
         },
         {
             id: 3,
@@ -32,5 +32,10 @@ export default{
             goal: 3,
             img: 'keane.jpg'
         },
-    ]
+    ],
+    // state baru
+    singleView: false,
+
+    //nilai awal null
+    active_member: null
 }

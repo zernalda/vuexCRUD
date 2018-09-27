@@ -1,7 +1,15 @@
 <template>
   <div class="mainview">
-    <h2>INI MAINVIEW</h2>
-    <member v-for="member in members" :member="member"></member>
+    <div v-if="singleView">
+     <!-- cuma 1 data -->
+    <h1>Single View</h1>
+    <!-- oper props member -->
+    <member :member="active_member"></member>
+    </div>
+    <div v-else>
+       <h2>Member App</h2>
+      <member v-for="member in members" :member="member"></member>
+    </div>
   </div>
 </template>
 
@@ -18,7 +26,10 @@ export default {
   computed: {
     // untuk mengambil data di state melalui getters
     ...mapGetters([
-      'members'
+        'members',
+        // cek singleView nya true atau false
+        'singleView',
+        'active_member'
     ])
   },
   components: {
