@@ -15,6 +15,7 @@ export default {
     },
     singleView: state => {
         return state.singleView
+        console.log('ada');
     },
     active_member: state => {
         return state.active_member

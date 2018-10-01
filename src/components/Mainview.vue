@@ -5,6 +5,13 @@
     <h1>Single View</h1>
     <!-- oper props member -->
     <member :member="active_member"></member>
+    <!-- kasih inputan untuk edit data -->
+    <!-- v-model - untuk menghubungkan data ke field mana -->
+    <input type="text" placeholder="isi nama! " v-model="active_member.name" >
+    <br>
+    <input type="text" placeholder="isi Goals! " v-model="active_member.goal" >
+    <br>
+    <input type="text" placeholder="isi foto! " v-model="active_member.img" >
     </div>
     <div v-else>
        <h2>Member App</h2>
@@ -29,6 +36,7 @@ export default {
         'members',
         // cek singleView nya true atau false
         'singleView',
+        console.log('singleView'),
         'active_member'
     ])
   },
