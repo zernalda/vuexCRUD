@@ -4,7 +4,7 @@
      <!-- cuma 1 data -->
     <h1>Single View</h1>
     <!-- oper props member -->
-    <member :member="active_member"></member>
+    <member :member="active_member" :allowImg="true"></member>
     <!-- kasih inputan untuk edit data -->
     <!-- v-model - untuk menghubungkan data ke field mana -->
     <input type="text" placeholder="isi nama! " v-model="active_member.name" >
@@ -14,8 +14,8 @@
     <input type="text" placeholder="isi foto! " v-model="active_member.img" >
     </div>
     <div v-else>
-       <h2>Member App</h2>
-      <member v-for="member in members" :member="member"></member>
+       <h2>Team</h2>
+      <member v-for="member in members" :allowImg="true" :member="member"></member>
     </div>
   </div>
 </template>
@@ -38,6 +38,7 @@ export default {
         'singleView',
         console.log('singleView'),
         'active_member'
+        // 'allowImg'
     ])
   },
   components: {
@@ -50,7 +51,7 @@ export default {
 <style scoped>
 
   .mainview {
-    flex: 3;
+    flex: 2;
   }
 
   h1, h2 {

@@ -37,5 +37,5 @@ export default{
     singleView: false,
 
     //nilai awal null
-    active_member: null
+    active_member: null,
 }
